@@ -87,6 +87,8 @@ export const chainlinkAggregatorProxy = {
   'arbitrum-rinkeby': '0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8',
   arbitrum: '0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612',
   rinkeby: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e',
+  bscmain: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
+  bsctest: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
 };
 
 export const chainlinkEthUsdAggregatorProxy = {
@@ -100,4 +102,6 @@ export const chainlinkEthUsdAggregatorProxy = {
   'arbitrum-rinkeby': '0x5f0423B1a6935dc5596e7A24d98532b67A0AeFd8',
   arbitrum: '0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612',
   rinkeby: '0x8A753747A1Fa494EC906cE90E9f37563A8AF630e',
+  bscmain: '0x0567F2323251f0Aab15c8dFb1967E4e8A7D42aeE',
+  bsctest: '0x2514895c72f50D8bd4B4F9b1110F0D6bD2c97526',
 };
