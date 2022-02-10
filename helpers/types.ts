@@ -19,6 +19,8 @@ export enum eEthereumNetwork {
   coverage = 'coverage',
   hardhat = 'hardhat',
   tenderly = 'tenderly',
+  bscmain = 'bscmain',
+  bsctest = 'bsctest',
 }
 
 export enum eBscNetwork {
@@ -49,8 +51,8 @@ export enum EthereumNetworkNames {
   xdai = 'xdai',
   avalanche = 'avalanche',
   fuji = 'fuji',
-  bscmain = 'bscmain',
   bsctest = 'bsctest',
+  bscmain = 'bscmain',
 }
 
 export enum AavePools {
@@ -267,7 +269,6 @@ export interface iAssetBase<T> {
   STAKE: T;
   xSUSHI: T;
   WAVAX: T;
-  WBNB: T;
 }
 
 export type iAssetsWithoutETH<T> = Omit<iAssetBase<T>, 'ETH'>;
@@ -326,7 +327,7 @@ export type iLpPoolAssets<T> = Pick<
 
 export type iBscPoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
-  'DAI' | 'USDC' | 'USDT' | 'BUSD' | 'WETH' | 'WBNB' | 'AAVE'
+  'DAI' | 'USDC' | 'USDT' | 'BUSD' | 'WETH' | 'AAVE'
 >;
 
 export type iMaticPoolAssets<T> = Pick<
@@ -392,7 +393,6 @@ export enum TokenContractId {
   STAKE = 'STAKE',
   xSUSHI = 'xSUSHI',
   WAVAX = 'WAVAX',
-  WBNB = 'WBNB',
 }
 
 export interface IReserveParams extends IReserveBorrowParams, IReserveCollateralParams {
@@ -453,6 +453,8 @@ export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.main]: T;
   [eEthereumNetwork.hardhat]: T;
   [eEthereumNetwork.tenderly]: T;
+  [eEthereumNetwork.bscmain]: T;
+  [eEthereumNetwork.bsctest]: T;
 }
 
 export interface iPolygonParamsPerNetwork<T> {

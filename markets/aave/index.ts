@@ -151,6 +151,13 @@ export const AaveConfig: IAaveConfiguration = {
       ZRX: '0xE41d2489571d322189246DaFA5ebDe1F4699F498',
       xSUSHI: '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272',
     },
+    [eEthereumNetwork.bscmain]: {},
+    [eEthereumNetwork.bsctest]: {
+      BUSD: '0xCC36337919dCE00519eb7a7013C97e79cC33D14f',
+      USDC: '0xE1106e7396dEA8c298Af67C1cdd732e0f3F32361',
+      USDT: '0xF2ED382e6A3439Be124813842200cf6702fD6ecA',
+      WETH: '0x7FcCaDD3e6A3F80e194CaDf13FeDF36B9BBbe98F',
+    },
   },
 };
 
