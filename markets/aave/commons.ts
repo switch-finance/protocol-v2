@@ -462,10 +462,10 @@ export const CommonsConfig: ICommonConfiguration = {
     [eEthereumNetwork.buidlerevm]: ZERO_ADDRESS,
     [eEthereumNetwork.kovan]: ZERO_ADDRESS,
     [eEthereumNetwork.ropsten]: ZERO_ADDRESS,
-    [eEthereumNetwork.rinkeby]: '0x688F3881b96e796C7abf941B2B76bC60E4a3cF99',
+    [eEthereumNetwork.rinkeby]: '0xbB2A79e3505d6b2A153CEFf71bd1f01068667568', // AaveIncentivesControllerImpl
     [eEthereumNetwork.main]: ZERO_ADDRESS,
     [eEthereumNetwork.tenderly]: ZERO_ADDRESS,
     [eEthereumNetwork.bscmain]: ZERO_ADDRESS,
-    [eEthereumNetwork.bsctest]: '0xa7Bcb3d64487DF542295bB9E06C045fcA83F8fF1',
+    [eEthereumNetwork.bsctest]: '0x75fAA2D01ec1ddf0394e14377Bbf551eb1576402', // AaveIncentivesControllerImpl
   },
 };
