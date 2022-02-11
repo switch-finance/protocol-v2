@@ -4,28 +4,19 @@ export interface SymbolMap<T> {
   [symbol: string]: T;
 }
 
-export type eNetwork =
-  | eEthereumNetwork
-  | eBscNetwork
-  | ePolygonNetwork
-  | eXDaiNetwork
-  | eAvalancheNetwork;
+export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork | eAvalancheNetwork;
 
 export enum eEthereumNetwork {
   buidlerevm = 'buidlerevm',
   kovan = 'kovan',
   ropsten = 'ropsten',
+  rinkeby = 'rinkeby',
   main = 'main',
   coverage = 'coverage',
   hardhat = 'hardhat',
   tenderly = 'tenderly',
   bscmain = 'bscmain',
   bsctest = 'bsctest',
-}
-
-export enum eBscNetwork {
-  main = 'main',
-  test = 'test',
 }
 
 export enum ePolygonNetwork {
@@ -45,6 +36,7 @@ export enum eAvalancheNetwork {
 export enum EthereumNetworkNames {
   kovan = 'kovan',
   ropsten = 'ropsten',
+  rinkeby = 'rinkeby',
   main = 'main',
   matic = 'matic',
   mumbai = 'mumbai',
@@ -325,11 +317,6 @@ export type iLpPoolAssets<T> = Pick<
   | 'BptBALWETH'
 >;
 
-export type iBscPoolAssets<T> = Pick<
-  iAssetsWithoutUSD<T>,
-  'DAI' | 'USDC' | 'USDT' | 'BUSD' | 'WETH' | 'AAVE'
->;
-
 export type iMaticPoolAssets<T> = Pick<
   iAssetsWithoutUSD<T>,
   'DAI' | 'USDC' | 'USDT' | 'WBTC' | 'WETH' | 'WMATIC' | 'AAVE'
@@ -436,20 +423,19 @@ export type iParamsPerNetwork<T> =
   | iEthereumParamsPerNetwork<T>
   | iPolygonParamsPerNetwork<T>
   | iXDaiParamsPerNetwork<T>
-  | iAvalancheParamsPerNetwork<T>
-  | iBscParamsPerNetwork<T>;
+  | iAvalancheParamsPerNetwork<T>;
 
 export interface iParamsPerNetworkAll<T>
   extends iEthereumParamsPerNetwork<T>,
     iPolygonParamsPerNetwork<T>,
-    iXDaiParamsPerNetwork<T>,
-    iBscParamsPerNetwork<T> {}
+    iXDaiParamsPerNetwork<T> {}
 
 export interface iEthereumParamsPerNetwork<T> {
   [eEthereumNetwork.coverage]: T;
   [eEthereumNetwork.buidlerevm]: T;
   [eEthereumNetwork.kovan]: T;
   [eEthereumNetwork.ropsten]: T;
+  [eEthereumNetwork.rinkeby]: T;
   [eEthereumNetwork.main]: T;
   [eEthereumNetwork.hardhat]: T;
   [eEthereumNetwork.tenderly]: T;
@@ -469,11 +455,6 @@ export interface iXDaiParamsPerNetwork<T> {
 export interface iAvalancheParamsPerNetwork<T> {
   [eAvalancheNetwork.avalanche]: T;
   [eAvalancheNetwork.fuji]: T;
-}
-
-export interface iBscParamsPerNetwork<T> {
-  [eBscNetwork.main]: T;
-  [eBscNetwork.test]: T;
 }
 
 export interface iParamsPerPool<T> {
@@ -578,10 +559,6 @@ export interface IXDAIConfiguration extends ICommonConfiguration {
 
 export interface IAvalancheConfiguration extends ICommonConfiguration {
   ReservesConfig: iAvalanchePoolAssets<IReserveParams>;
-}
-
-export interface IBscConfiguration extends ICommonConfiguration {
-  ReservesConfig: iBscPoolAssets<IReserveParams>;
 }
 
 export interface ITokenAddress {
